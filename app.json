@@ -1,29 +1,68 @@
 {
   "expo": {
-    "name": "safepay",
+    "name": "SafePay",
     "slug": "safepay",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "newArchEnabled": true,
+    "userInterfaceStyle": "dark",
+
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#0B0B0F"
     },
+
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "icon": "./assets/ios-icon.png",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "SafePay needs access to your photos to let you attach screenshots or receipts for AI checks.",
+        "NSCameraUsageDescription": "SafePay needs camera access so you can scan receipts or QR codes for AI checks."
+      }
     },
+
     "android": {
+      "package": "za.co.safepay.app",
+      "versionCode": 1,
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/adaptive-foreground.png",
+        "backgroundColor": "#0B0B0F"
       },
-      "edgeToEdgeEnabled": true
+      "backgroundColor": "#0B0B0F",
+      "statusBar": {
+        "backgroundColor": "#0B0B0F",
+        "barStyle": "light-content"
+      },
+      "navigationBar": {
+        "backgroundColor": "#0B0B0F",
+        "barStyle": "light-content"
+      },
+      "edgeToEdgeEnabled": true,
+      "softwareKeyboardLayoutMode": "pan",
+      "newArchEnabled": false
     },
+
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow SafePay to access your photos to attach screenshots and receipts for AI checks.",
+          "cameraPermission": "Allow SafePay to use the camera to scan receipts or QR codes for AI checks."
+        }
+      ]
+    ],
+
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "backgroundColor": "#0B0B0F",
+      "themeColor": "#0B0B0F"
+    },
+
+    "extra": {
+      "eas": {
+        "projectId": "aac82b50-febc-4c35-83e7-94e94cd34add"
+      }
     }
   }
 }
+
